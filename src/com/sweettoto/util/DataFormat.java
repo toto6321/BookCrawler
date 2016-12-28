@@ -100,8 +100,8 @@ public class DataFormat {
 					for (int currentRowIndex = 1; currentRowIndex < lastNumberOfRow + 1; currentRowIndex++) {
 						Row row = sheet.getRow(currentRowIndex);
 						ArrayList<String> book = new ArrayList<String>();
-						for (int currentColumnIndex = 0; currentColumnIndex < row
-								.getLastCellNum(); currentColumnIndex++) {
+						for (int currentColumnIndex = 0; currentColumnIndex < row.getLastCellNum()
+								&& currentColumnIndex < 11; currentColumnIndex++) {
 							Cell cell = row.getCell(currentColumnIndex);
 							book.add(cell.getStringCellValue());
 						}
@@ -267,9 +267,9 @@ public class DataFormat {
 		// authors0[0]=authors0[0].substring(authors0[0].indexOf('['));
 		String[] authors0_0 = authors0[0].split("[", 2);
 		if (authors0_0.length > 1) {
-			authors0[0] = "["+authors0_0[1];
-		}else {
-			authors0[0]=authors0_0[0];
+			authors0[0] = "[" + authors0_0[1];
+		} else {
+			authors0[0] = authors0_0[0];
 		}
 		if (authors0.length > 1) {
 			authors[0] = authors0[0] + "]" + authors0[1];

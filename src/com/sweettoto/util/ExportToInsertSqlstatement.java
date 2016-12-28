@@ -1,5 +1,5 @@
 /**
- 	this is designed to translate the data into a sql file of insert statement
+ 	this is designed to translate the data from excel file into a sql file of insertion statement
  * 
  */
 package com.sweettoto.util;
