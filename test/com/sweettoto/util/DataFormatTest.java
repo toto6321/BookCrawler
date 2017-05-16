@@ -39,10 +39,10 @@ public class DataFormatTest {
 	}
 
 	@Test
-	public void testFormatAuthor(){
-		String author =null;
-//		author="\"(英) 达尔文 著";
-		author="\" 佚名 著";
+	public void testFormatAuthor() {
+		String author = null;
+		// author="\"(英) 达尔文 著";
+		author = "\" 佚名 著";
 		System.out.println(author);
 		// replace "【" and "】" with "[" and "]" respectively
 		author = author.replaceAll("【", "[");
@@ -51,32 +51,28 @@ public class DataFormatTest {
 		String[] authors = author.split(";", 2);
 		String[] authors0 = authors[0].split("\\)", 2);
 		authors0[0] = authors0[0].replaceAll("\\(", "[");
-//		authors0[0]=authors0[0].substring(authors0[0].indexOf('['));
+		// authors0[0]=authors0[0].substring(authors0[0].indexOf('['));
 		String[] authors0_0 = authors0[0].split("\\[", 2);
 		if (authors0_0.length > 1) {
-			authors0[0] = "["+authors0_0[1];
-		}else {
-			authors0[0]=authors0_0[0];
+			authors0[0] = "[" + authors0_0[1];
+		} else {
+			authors0[0] = authors0_0[0];
 		}
-		
+
 		if (authors0.length > 1) {
 			authors[0] = authors0[0] + "]" + authors0[1];
 		} else {
 			authors[0] = authors0[0];
 		}
-	
+
 		if (authors.length > 1) {
-			author = authors[0] + ";"+authors[1];
+			author = authors[0] + ";" + authors[1];
 		} else {
 			author = authors[0];
 		}
 		System.out.println(author);
 	}
-	
-	
-	
-	
-	
+
 	public void printBytes(byte[] array, String name) {
 		for (int k = 0; k < array.length; k++) {
 			System.out.println(name + "[" + k + "] = " + "0x");
@@ -139,55 +135,55 @@ public class DataFormatTest {
 
 	@Test
 	public void testEncodeCharset() {
-		String string1,string2,string3;
-		string1=string2=string3=null;
-		string1=new String("你好");
-		byte[] bytes1,bytes2,bytes3;
-		bytes1=bytes2=bytes3=null;
+		String string1, string2, string3;
+		string1 = string2 = string3 = null;
+		string1 = new String("你好");
+		byte[] bytes1, bytes2, bytes3;
+		bytes1 = bytes2 = bytes3 = null;
 		try {
-			bytes1=string1.getBytes("gbk");
+			bytes1 = string1.getBytes("gbk");
 		} catch (UnsupportedEncodingException e1) {
 			e1.printStackTrace();
 		}
 		try {
-			string2=new String(bytes1, "gbk");
+			string2 = new String(bytes1, "gbk");
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 		try {
-			bytes2=string2.getBytes("utf8");
+			bytes2 = string2.getBytes("utf8");
 		} catch (UnsupportedEncodingException e1) {
 			e1.printStackTrace();
 		}
 		try {
-			string3=new String(bytes2, "utf8");
+			string3 = new String(bytes2, "utf8");
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-		bytes3=string3.getBytes();
-		
-		
+		bytes3 = string3.getBytes();
+
 		// show
-		System.out.println("original string: "+string1);
+		System.out.println("original string: " + string1);
 		System.out.println("original bytes:  ");
 		for (int i = 0; i < bytes1.length; i++) {
-			System.out.print(Integer.toHexString(bytes1[i]&0x00ff)+" ");
-		}System.out.println("");
-		
-		System.out.println("changing charset: "+string2);
+			System.out.print(Integer.toHexString(bytes1[i] & 0x00ff) + " ");
+		}
+		System.out.println("");
+
+		System.out.println("changing charset: " + string2);
 		System.out.println("variant1 bytes:   ");
 		for (int i = 0; i < bytes2.length; i++) {
-			System.out.print(Integer.toHexString(bytes2[i]&0x00ff)+" ");
-		}System.out.println("");
-		
-		System.out.println("double changing charset: "+string2);
+			System.out.print(Integer.toHexString(bytes2[i] & 0x00ff) + " ");
+		}
+		System.out.println("");
+
+		System.out.println("double changing charset: " + string2);
 		System.out.println("variant2 bytes:   ");
 		for (int i = 0; i < bytes3.length; i++) {
-			System.out.print(Integer.toHexString(bytes3[i]&0x00ff)+" ");
-		}System.out.println("");
-		
-		
-		
+			System.out.print(Integer.toHexString(bytes3[i] & 0x00ff) + " ");
+		}
+		System.out.println("");
+
 	}
 
 	@Test
@@ -328,7 +324,8 @@ public class DataFormatTest {
 			int lastNumberOfRow = sheet.getLastRowNum();
 			System.out.println("the last number of row is " + lastNumberOfRow);
 			// read all rows
-			String isbn, title, author, publisher, publicationDate, priceOnTag, classfication, coverPath;
+			// String isbn, title, author, publisher, publicationDate,
+			// priceOnTag, classfication, coverPath;
 			// for (int currentRowIndex = 1; currentRowIndex < lastNumberOfRow;
 			// currentRowIndex++) {
 			// row = sheet.getRow(currentRowIndex);

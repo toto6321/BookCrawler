@@ -15,6 +15,7 @@ public class FileDownloader {
 	private String url = null;
 	private String filePath = null;
 
+	@SuppressWarnings("static-access")
 	public FileDownloader(String url) {
 		this.url = url;
 

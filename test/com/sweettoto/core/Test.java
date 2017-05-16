@@ -15,6 +15,7 @@ public class Test {
 		
 	}
 	
+	@SuppressWarnings("static-access")
 	@org.junit.Test
 	public void test1(){
 		System.out.println("mybooks1.xlsx".matches("^(\\w)*\\.xlsx$"));

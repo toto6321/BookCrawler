@@ -32,6 +32,7 @@ public class BooksPageProcessor_copy_1610142338 implements PageProcessor {
 	private final static String TARGET_URL_PATTERN = "http://product\\.china-pub\\.com/(.)+$";
 
 	// keep a static parameter to count
+	@SuppressWarnings("unused")
 	private static long count = 0;
 	private Site site = Site.me().setDomain(SITE_DOMAIN).setSleepTime(3000).setRetryTimes(3);
 

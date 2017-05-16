@@ -2,9 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/webmagic"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/POI"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/juniversalchardet"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Webmagic"/>
+	<classpathentry kind="lib" path="C:/Users/Wind/Work/Java_eclipse/Libraries/juniversalchardet-2.0.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
